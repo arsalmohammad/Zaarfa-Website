@@ -1,0 +1,2486 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaarfa - Innovating Digital Solutions</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+          tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#7C3AED'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+    
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header/Navbar Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+}
+
+.header.scrolled .nav-link,
+.header.scrolled .logo {
+  color: #0A1F44;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 30px;
+}
+
+/* Responsive Navigation */
+.mobile-nav {
+  display: none;
+}
+
+.desktop-nav {
+  display: grid;
+}
+
+@media (max-width: 1023px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .mobile-nav {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://readdy.ai/api/search-image?query=modern%20technology%20office%20workspace%20with%20computers%2C%20servers%2C%20and%20digital%20screens%20showcasing%20software%20development%2C%20clean%20minimalist%20background%20with%20blue%20and%20purple%20gradients%2C%20professional%20lighting%2C%20futuristic%20tech%20environment&width=1920&height=1080&seq=hero-bg-001&orientation=landscape');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+
+/* Particles */
+.particles {
+  position: absolute;
+  inset: 0;
+}
+
+    :where([class^="ri-"])::before {
+        content: "\f3c2";
+    }
+    
+    /* Enhanced Animation Styles */
+    .fade-up {
+        opacity: 0;
+        transform: translateY(60px);
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .fade-up.animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .slide-in-left {
+        opacity: 0;
+        transform: translateX(-80px);
+        transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .slide-in-left.animate {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .slide-in-right {
+        opacity: 0;
+        transform: translateX(80px);
+        transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .slide-in-right.animate {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .scale-in {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .scale-in.animate {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .rotate-in {
+        opacity: 0;
+        transform: rotate(-10deg) scale(0.9);
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .rotate-in.animate {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+
+    .bounce-in {
+        opacity: 0;
+        transform: translateY(100px) scale(0.8);
+        transition: all 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .bounce-in.animate {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    .flip-in {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(90deg);
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .flip-in.animate {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(0deg);
+    }
+
+    .slide-in {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: all 0.6s ease-out;
+    }
+
+    .slide-in.animate {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .slide-in:nth-child(2) { transition-delay: 0.1s; }
+    .slide-in:nth-child(3) { transition-delay: 0.2s; }
+    .slide-in:nth-child(4) { transition-delay: 0.3s; }
+    .slide-in:nth-child(5) { transition-delay: 0.4s; }
+
+    /* Stagger animations */
+    .stagger-item:nth-child(1) { transition-delay: 0.1s; }
+    .stagger-item:nth-child(2) { transition-delay: 0.2s; }
+    .stagger-item:nth-child(3) { transition-delay: 0.3s; }
+    .stagger-item:nth-child(4) { transition-delay: 0.4s; }
+
+    /* Parallax effect */
+    .parallax {
+        transform: translateZ(0);
+        will-change: transform;
+    }
+
+    /* Hover animations */
+    .hover-lift {
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Text reveal animation */
+    .text-reveal {
+        overflow: hidden;
+        display: inline-block;
+        max-width: 100%;
+    }
+
+    .text-reveal span {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .text-reveal.animate span {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Counter animation */
+    .counter {
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Loading animation */
+    @keyframes shimmer {
+        0% { background-position: -200px 0; }
+        100% { background-position: calc(200px + 100%) 0; }
+    }
+
+    .shimmer {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200px 100%;
+        animation: shimmer 1.5s infinite;
+    }
+
+    /* Hamburger Menu Animations */
+    .hamburger-active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    .hamburger-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Mobile Menu Item Animations */
+    .mobile-menu-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .mobile-menu-item.animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Mobile Menu Open Animation */
+    .mobile-menu-open {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* Mobile Menu Item Stagger Animation */
+    .mobile-menu-item:nth-child(1) { transition-delay: 0.1s; }
+    .mobile-menu-item:nth-child(2) { transition-delay: 0.2s; }
+    .mobile-menu-item:nth-child(3) { transition-delay: 0.3s; }
+    .mobile-menu-item:nth-child(4) { transition-delay: 0.4s; }
+
+    /* Mobile Menu Background Animation */
+    .mobile-menu-bg {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(59, 130, 246, 0.1) 100%);
+        backdrop-filter: blur(20px);
+    }
+
+    /* Mobile Menu Hover Effects */
+    .mobile-menu-item:hover span::after {
+        width: 100%;
+    }
+
+    .mobile-menu-item span::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #60a5fa, #a855f7);
+        transition: width 0.3s ease;
+    }
+
+    /* Animated particles for hero section */
+    .particle {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .particle-1 {
+        top: 20%;
+        left: 20%;
+        width: 8px;
+        height: 8px;
+        background-color: rgba(96, 165, 250, 0.7);
+        animation: pulse 3s infinite;
+    }
+    
+    .particle-2 {
+        top: 40%;
+        right: 32%;
+        width: 12px;
+        height: 12px;
+        background-color: rgba(167, 139, 250, 0.6);
+        animation: bounce 4s infinite;
+    }
+    
+    .particle-3 {
+        bottom: 32%;
+        left: 25%;
+        width: 8px;
+        height: 8px;
+        background-color: rgba(103, 232, 249, 0.8);
+        animation: pulse 4s infinite;
+    }
+    
+    .particle-4 {
+        bottom: 20%;
+        right: 20%;
+        width: 16px;
+        height: 16px;
+        background-color: rgba(96, 165, 250, 0.5);
+        animation: ping 5s infinite;
+    }
+    
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 0.7;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+    }
+    
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    @keyframes ping {
+        0% {
+            transform: scale(1);
+            opacity: 0.5;
+        }
+        75%, 100% {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+    
+    /* Scroll indicator */
+    .scroll-indicator {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation: fadeIn 1s ease-out 1.5s forwards;
+    }
+    
+    .scroll-container {
+        width: 24px;
+        height: 40px;
+        border: 2px solid white;
+        border-radius: 9999px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .scroll-dot {
+        width: 4px;
+        height: 12px;
+        background-color: white;
+        border-radius: 9999px;
+        margin-top: 8px;
+        animation: bounce 2s infinite;
+    }
+    
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Portfolio Section */
+      .portfolio-section {
+        padding-top: 80px;
+        min-height: 100vh;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #0A1F44;
+        margin-bottom: 20px;
+      }
+
+      .section-subtitle {
+        font-size: 1.1rem;
+        color: #64748b;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .filter-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 12px 24px;
+        background: #f1f5f9;
+        border: none;
+        border-radius: 50px;
+        color: #64748b;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 80px;
+      }
+
+      /* Tablet: 2 cards per row */
+      @media (min-width: 768px) {
+        .portfolio-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 25px;
+        }
+      }
+
+      /* Desktop: 3 cards per row */
+      @media (min-width: 1024px) {
+        .portfolio-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+        }
+      }
+
+      .portfolio-item {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .portfolio-image {
+        width: 100%;
+        height: 220px;
+        background: #f8fafc;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .portfolio-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .portfolio-item:hover .portfolio-image img {
+        transform: scale(1.05);
+      }
+
+      .portfolio-content {
+        padding: 24px;
+      }
+
+      .project-category {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #3b82f6;
+        font-weight: 500;
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .project-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #0A1F44;
+        margin-bottom: 8px;
+      }
+
+      .project-subtitle {
+        font-size: 0.9rem;
+        color: #64748b;
+      }
+
+      .project-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .view-details {
+        background: none;
+        border: none;
+        color: #64748b;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+      }
+
+      .view-details:hover {
+        color: #3b82f6;
+        transform: translateX(4px);
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      /* Category Icons */
+      .category-icon {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        display: inline-block;
+      }
+
+      .web-icon {
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      }
+      .app-icon {
+        background: linear-gradient(135deg, #10b981, #059669);
+      }
+      .ecommerce-icon {
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+      }
+      .marketing-icon {
+        background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+      }
+</style>
+
+</head>
+    <body class="bg-white overflow-x-hidden w-full">
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-transparent fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300">
+        <div class="w-full">
+            <!-- Desktop Navigation - Hidden on mobile via CSS -->
+            <div class="desktop-nav grid grid-cols-3 items-center w-full">
+                <!-- Left Navigation Items -->
+                <div class="flex space-x-6 justify-start">
+                    <a href="#services" class="text-white hover:text-blue-200 transition-colors font-['Inter'] font-medium">Services</a>
+                        <a href="#about" class="text-white hover:text-blue-200 transition-colors font-['Inter'] font-medium">About</a>
+                </div>
+                
+                <!-- Centered Logo -->
+                <div class="text-white text-2xl font-['Pacifico'] text-center">
+                    <a href="#" class="text-white hover:text-blue-200 transition-colors">
+                        Zaarfa
+                    </a>
+                </div>
+                
+                <!-- Right Navigation Items -->
+                <div class="flex space-x-6 justify-end">
+                    <a href="#portfolio" class="text-white hover:text-blue-200 transition-colors font-['Inter'] font-medium">Portfolio</a>
+                        <a href="#contact" class="text-white hover:text-blue-200 transition-colors font-['Inter'] font-medium">Contact</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav flex items-center justify-between w-full">
+                <div class="text-white text-2xl font-['Pacifico']">
+                    <a href="#" class="text-white hover:text-blue-200 transition-colors">
+                        Zaarfa
+                    </a>
+                </div>
+                <button id="mobileMenuBtn" class="relative w-8 h-8 flex flex-col justify-center items-center group">
+                    <span class="w-6 h-0.5 bg-white rounded-full transition-all duration-300 ease-out transform group-hover:bg-blue-200"></span>
+                    <span class="w-6 h-0.5 bg-white rounded-full transition-all duration-300 ease-out transform mt-1.5 group-hover:bg-blue-200"></span>
+                    <span class="w-6 h-0.5 bg-white rounded-full transition-all duration-300 ease-out transform mt-1.5 group-hover:bg-blue-200"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileMenu" class="fixed inset-0 bg-black backdrop-blur-md z-[1100] opacity-0 invisible transition-all duration-500 ease-in-out mobile-menu-overlay">
+            <div class="flex flex-col items-center justify-center h-full">
+                <div class="text-center space-y-8">
+                    <div class="mb-12">
+                        <div class="text-white text-3xl font-['Pacifico'] mb-4">Zaarfa</div>
+                        <div class="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <a href="#services" class="block text-white text-2xl font-medium hover:text-blue-300 transition-all duration-300 transform hover:scale-105 mobile-menu-item">
+                            <span class="relative">
+                                Services
+                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </a>
+                        <a href="#about" class="block text-white text-2xl font-medium hover:text-blue-300 transition-all duration-300 transform hover:scale-105 mobile-menu-item">
+                            <span class="relative">
+                                About
+                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </a>
+                        <a href="#portfolio" class="block text-white text-2xl font-medium hover:text-blue-300 transition-all duration-300 transform hover:scale-105 mobile-menu-item">
+                            <span class="relative">
+                                Portfolio
+                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </a>
+                        <a href="#contact" class="block text-white text-2xl font-medium hover:text-blue-300 transition-all duration-300 transform hover:scale-105 mobile-menu-item">
+                            <span class="relative">
+                                Contact
+                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-12 pt-8 border-t border-white/20">
+                        <div class="flex justify-center space-x-6">
+                            <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 transform hover:scale-110">
+                                <i class="ri-facebook-fill text-white text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 transform hover:scale-110">
+                                <i class="ri-linkedin-fill text-white text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 transform hover:scale-110">
+                                <i class="ri-instagram-fill text-white text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Close Button -->
+            <button id="closeMenuBtn" class="absolute top-8 right-8 w-10 h-10 flex items-center justify-center text-white hover:text-blue-300 transition-colors">
+                <i class="ri-close-line text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-0">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+             style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://readdy.ai/api/search-image?query=modern%20technology%20office%20workspace%20with%20computers%2C%20servers%2C%20and%20digital%20screens%20showcasing%20software%20development%2C%20clean%20minimalist%20background%20with%20blue%20and%20purple%20gradients%2C%20professional%20lighting%2C%20futuristic%20tech%20environment&width=1920&height=1080&seq=hero-bg-001&orientation=landscape')">
+            
+            <!-- Animated overlay particles -->
+            <div class="absolute inset-0">
+                <div class="particle particle-1"></div>
+                <div class="particle particle-2"></div>
+                <div class="particle particle-3"></div>
+                <div class="particle particle-4"></div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <div class="transform transition-all duration-1000 opacity-0" id="heroContent">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                    <span class="block transform transition-all duration-1000 delay-200">
+                        Innovating
+                    </span>
+                    <span class="block bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent transform transition-all duration-1000 delay-400">
+                        Digital Solutions
+                    </span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed transform transition-all duration-1000 delay-600 opacity-0" id="heroDescription">
+                    We craft exceptional digital experiences that drive growth and transform businesses in the modern world
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center transform transition-all duration-1000 delay-800 opacity-0" id="heroButtons">
+                    <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer">
+                        Get Started
+                    </button>
+                    <a href="#portfolio" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-gray-900 transform hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer inline-block text-center">
+                        View Portfolio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-container">
+                    <div class="scroll-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="pt-20 pb-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 fade-up" style="color: #0A1F44;">
+                    Our <span class="text-primary">Services</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-up">
+                    We provide comprehensive digital solutions tailored to meet your business needs and drive sustainable growth
+                </p>
+            </div>
+        </div>
+        
+        <!-- Website Development Services Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+    <video class="w-full h-80 object-contain rounded-lg shadow-lg slide-in-left hover-lift" autoplay muted loop>
+        <source src="Video/Male developer working at desk-vmake.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+                
+                <!-- Content -->
+                <div class="order-1 lg:order-2">
+                    <h2 id="web-development" class="text-4xl font-bold mb-6 slide-in-right text-center md:text-left" style="color: #0A1F44;">
+                        Website Development
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed slide-in-right text-center md:text-left">
+                        We craft visually stunning and intuitive user interfaces that enhance user satisfaction and drive engagement. Our design process focuses on creating seamless user experiences that not only look great but also function flawlessly across all devices and platforms.
+                    </p>
+                    <ul class="space-y-3 slide-in-right">
+                        <li class="flex items-center stagger-item">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700">User centered design approach</span>
+                        </li>
+                        <li class="flex items-center stagger-item">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700">Interactive and engaging interfaces</span>
+                        </li>
+                        <li class="flex items-center stagger-item">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700">Consistent and accessible design language</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile App Development Services Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="order-1 lg:order-1">
+                    <h2 id="mobile-app-development" class="text-4xl font-bold mb-6 slide-in-left text-center md:text-left" style="color: #0A1F44;">
+                        Mobile App Development
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed slide-in-left text-center md:text-left">
+                        We design and build powerful mobile applications that offer seamless functionality and exceptional user experiences. From ideation to deployment, our development process ensures that your app performs flawlessly on every platform.
+                    </p>
+                    <ul class="space-y-3 slide-in-left">
+                        <li class="flex items-center stagger-item">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700">Cross-platform development</span>
+                        </li>
+                        <li class="flex items-center stagger-item">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700">Scalable and secure applications</span>
+                        </li>
+                        <li class="flex items-center stagger-item">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700">Focus on user experience and performance</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Video -->
+                <div class="order-2 lg:order-2">
+                    <video class="w-full h-80 object-contain rounded-lg shadow-lg slide-in-right hover-lift" autoplay muted loop>
+                        <source src="Video/Mobile App Developer-vmake.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UI/UX Design Excellence Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Video -->
+                <div class="order-2 lg:order-1">
+                    <video class="w-full h-80 object-contain rounded-lg shadow-lg slide-in-left hover-lift" autoplay muted loop>
+                        <source src="Video/Fast Shopping Delivery-vmake.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <!-- Content -->
+                <div class="order-1 lg:order-2">
+                    <h2 id="ecommerce" class="text-4xl font-bold mb-6 slide-in-right text-center md:text-left" style="color: #0A1F44;">
+                        Ecommerce
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed slide-in-right text-center md:text-left">
+                        Our e-commerce solutions are tailored to help you grow your online business. We create seamless shopping experiences that maximize conversion rates and engage customers with an intuitive, user-friendly interface.
+                    </p>
+                    <ul class="space-y-3 slide-in-right">
+                        <li class="flex items-center stagger-item">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700">Custom e-commerce solutions</span>
+                        </li>
+                        <li class="flex items-center stagger-item">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700">Shopify integration and management</span>
+                        </li>
+                        <li class="flex items-center stagger-item">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700">Product hunting and curation</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Digital Marketing Services Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="order-1 lg:order-1">
+                    <h2 id="digital-marketing" class="text-4xl font-bold mb-6 slide-in-left text-center md:text-left" style="color: #0A1F44;">
+                        Digital Marketing
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed slide-in-left text-center md:text-left">
+                        We create innovative and data-driven digital marketing strategies that elevate your brand. Our approach is designed to increase visibility, engage customers, and drive results through a combination of SEO, social media, and paid advertising.
+                    </p>
+                    <ul class="space-y-3 slide-in-left">
+                        <li class="flex items-center stagger-item">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700">SEO optimization</span>
+                        </li>
+                        <li class="flex items-center stagger-item">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700">Social media marketing</span>
+                        </li>
+                        <li class="flex items-center stagger-item">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                            <span class="text-gray-700">Paid advertising campaigns</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Image -->
+                <div class="order-2 lg:order-2">
+    <div class="order-2 lg:order-2">
+    <img src="Images/Social-Media-Marketing001.webp" 
+         alt="UI/UX Design" 
+         class="w-full h-80 object-cover rounded-lg shadow-lg slide-in-left hover-lift"> 
+</div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+     </section>
+
+     <div class="text-center mb-10 -mt-6">
+        <button type="submit" class="bg-primary text-white px-12 py-3 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap font-semibold">
+            Explore All Services
+        </button>
+    </div>
+ 
+     <!-- Why Choose Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 fade-up" style="color: #0A1F44;">
+                    Why Choose <span class="text-primary">Zaarfa</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-up">
+                    We combine creativity with technical expertise to deliver exceptional digital solutions that exceed expectations
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="text-center bounce-in">
+                    <div class="text-4xl font-bold text-primary mb-2 counter">100+</div>
+                    <div class="text-gray-600">Projects Completed</div>
+                </div>
+                <div class="text-center bounce-in">
+                    <div class="text-4xl font-bold text-primary mb-2 counter">50+</div>
+                    <div class="text-gray-600">Happy Clients</div>
+                </div>
+                <div class="text-center bounce-in">
+                    <div class="text-4xl font-bold text-primary mb-2 counter">5+</div>
+                    <div class="text-gray-600">Years Experience</div>
+                </div>
+                <div class="text-center bounce-in">
+                    <div class="text-4xl font-bold text-primary mb-2 counter">24/7</div>
+                    <div class="text-gray-600">Support Available</div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center scale-in hover-lift p-4 rounded-lg cursor-pointer">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-rocket-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2" style="color: #0A1F44;">Lightning Speed</h3>
+                    <p class="text-gray-600 text-sm">
+                        We deliver clean code and lightning-fast loading speeds for all our projects
+                    </p>
+                </div>
+
+                <div class="text-center scale-in hover-lift p-4 rounded-lg cursor-pointer">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-team-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2" style="color: #0A1F44;">Expert Team</h3>
+                    <p class="text-gray-600 text-sm">
+                        Our skilled professionals bring years of experience to every project
+                    </p>
+                </div>
+
+                <div class="text-center scale-in hover-lift p-4 rounded-lg cursor-pointer">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-truck-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2" style="color: #0A1F44;">Timely Delivery</h3>
+                    <p class="text-gray-600 text-sm">
+                        We ensure timely delivery and client satisfaction with every project
+                    </p>
+                </div>
+
+                <div class="text-center scale-in hover-lift p-4 rounded-lg cursor-pointer">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-customer-service-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2" style="color: #0A1F44;">Premium Support</h3>
+                    <p class="text-gray-600 text-sm">
+                        Dedicated support team available to help with your queries anytime
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Portfolio Section -->
+
+<section class="portfolio-section" id="portfolio">
+  <div class="container">
+    <div class="section-header" id="portfolio-header">
+      <h2 class="section-title">Our Portfolio</h2>
+      <p class="section-subtitle">
+        Explore our diverse portfolio, showcasing innovative projects in web development, mobile applications, e-commerce, and digital marketing, all designed to make a lasting impact.
+      </p>
+    </div>
+
+    <div class="filter-tabs" id="portfolio-filters">
+      <button class="filter-btn active" data-filter="all">
+        All Projects
+      </button>
+      <button class="filter-btn" data-filter="web">Web Development</button>
+      <button class="filter-btn" data-filter="app">App Development</button>
+      <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+      <button class="filter-btn" data-filter="marketing">
+        Digital Marketing
+      </button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolio-grid">
+      <!-- Web Development Projects -->
+      <div class="portfolio-item" data-category="web" data-project="techcorp-website">
+        <div class="portfolio-image">
+          <img src="Images/Tech Corp.jpeg" alt="TechCorp Website" />
+        </div>
+        <div class="portfolio-content">
+          <div class="project-category">
+            <span class="category-icon web-icon"></span> Web Development
+          </div>
+          <h3 class="project-title">TechCorp Website</h3>
+          <p class="project-subtitle">
+            We built a cutting-edge corporate website for TechCorp, blending clean design with responsive layouts and intuitive navigation for a superior user experience.
+          </p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="web" data-project="healthplus-portal">
+        <div class="portfolio-image">
+          <img src="Images/Health Portal.jpeg" alt="HealthPlus Portal" loading="lazy" />
+        </div>
+        <div class="portfolio-content">
+          <div class="project-category">
+            <span class="category-icon web-icon"></span> Web Development
+          </div>
+          <h3 class="project-title">HealthPlus Portal</h3>
+          <p class="project-subtitle">
+            Our HealthPlus portal enables seamless communication between patients and healthcare providers, offering features such as appointment scheduling and health tracking.
+          </p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="web" data-project="edulearn-platform">
+        <div class="portfolio-image">
+          <img src="Images/Edu Learn.jpeg" alt="EduLearn Platform" loading="lazy" />
+        </div>
+        <div class="portfolio-content">
+          <div class="project-category">
+            <span class="category-icon web-icon"></span> Web Development
+          </div>
+          <h3 class="project-title">EduLearn Platform</h3>
+          <p class="project-subtitle">
+            EduLearn is an interactive e-learning platform designed to provide accessible education through online courses, quizzes, and community engagement features.
+          </p>
+        </div>
+      </div>
+
+      <!-- App Development Projects -->
+      <div class="portfolio-item" data-category="app" data-project="fitness-tracker">
+        <div class="portfolio-image">
+          <img src="Images/FitLife App.jpeg" alt="FitLife Tracker" loading="lazy" />
+        </div>
+        <div class="portfolio-content">
+          <div class="project-category">
+            <span class="category-icon app-icon"></span> App Development
+          </div>
+          <h3 class="project-title">FitLife Tracker</h3>
+          <p class="project-subtitle">
+            FitLife is a mobile app that tracks fitness progress, offering real-time performance analytics, goal tracking, and personalized workout plans to enhance health.
+          </p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="app" data-project="banking-app">
+        <div class="portfolio-image">
+          <img src="Images/SecurePay app.jpeg" alt="SecurePay Banking" loading="lazy" />
+        </div>
+        <div class="portfolio-content">
+          <div class="project-category">
+            <span class="category-icon app-icon"></span> App Development
+          </div>
+          <h3 class="project-title">SecurePay Banking</h3>
+          <p class="project-subtitle">
+            SecurePay Banking app provides secure banking solutions with features such as mobile check deposit, fund transfers, and 24/7 account monitoring.
+          </p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="app" data-project="social-connect">
+        <div class="portfolio-image">
+          <img src="Images/Social Connect App.jpeg" alt="SocialConnect" loading="lazy" />
+        </div>
+        <div class="portfolio-content">
+          <div class="project-category">
+            <span class="category-icon app-icon"></span> App Development
+          </div>
+          <h3 class="project-title">SocialConnect</h3>
+          <p class="project-subtitle">
+            SocialConnect is a mobile application designed to foster better social engagement with integrated messaging, video calls, and group chats for users worldwide.
+          </p>
+        </div>
+      </div>
+
+      <!-- E-commerce Projects -->
+      <div class="portfolio-item" data-category="ecommerce" data-project="fashion-store">
+        <div class="portfolio-image">
+          <img src="Images/LuxeFashion ecommerce.jpeg" alt="LuxeFashion Store" loading="lazy" />
+        </div>
+        <div class="portfolio-content">
+          <div class="project-category">
+            <span class="category-icon ecommerce-icon"></span> E-commerce
+          </div>
+          <h3 class="project-title">LuxeFashion Store</h3>
+          <p class="project-subtitle">
+            LuxeFashion is a premier online clothing store that offers a wide selection of luxury fashion items with a focus on style, quality, and customer experience.
+          </p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="ecommerce" data-project="tech-marketplace">
+        <div class="portfolio-image">
+          <img src="Images/Tech Bazaar ecom.jpeg" alt="TechBazaar Marketplace" loading="lazy" />
+        </div>
+        <div class="portfolio-content">
+          <div class="project-category">
+            <span class="category-icon ecommerce-icon"></span> E-commerce
+          </div>
+          <h3 class="project-title">TechBazaar Marketplace</h3>
+          <p class="project-subtitle">
+            TechBazaar is an e-commerce platform for tech enthusiasts, offering gadgets, accessories, and electronics with easy navigation and secure payment options.
+          </p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="ecommerce" data-project="organic-store">
+        <div class="portfolio-image">
+          <img src="Images/Green Earth Organic ecomm.jpeg" alt="GreenEats Organic" loading="lazy" />
+        </div>
+        <div class="portfolio-content">
+          <div class="project-category">
+            <span class="category-icon ecommerce-icon"></span> E-commerce
+          </div>
+          <h3 class="project-title">GreenEats Organic</h3>
+          <p class="project-subtitle">
+            GreenEats Organic is an online marketplace that offers eco-friendly, organic products ranging from food items to personal care products, all with a commitment to sustainability.
+          </p>
+        </div>
+      </div>
+
+      <!-- Digital Marketing Projects -->
+      <div class="portfolio-item" data-category="marketing" data-project="startup-campaign">
+        <div class="portfolio-image">
+          <img src="Images/Tech Campaign.png" alt="InnovateTech Campaign" loading="lazy" />
+        </div>
+        <div class="portfolio-content">
+          <div class="project-category">
+            <span class="category-icon marketing-icon"></span> Digital Marketing
+          </div>
+          <h3 class="project-title">InnovateTech Campaign</h3>
+          <p class="project-subtitle">
+            The InnovateTech campaign is a result-driven digital marketing strategy that helped elevate brand awareness, engagement, and conversions across key digital channels.
+          </p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="marketing" data-project="retail-rebranding">
+        <div class="portfolio-image">
+          <img src="Images/retail rebrand ecomm.png" alt="RetailGiant Rebranding" loading="lazy" />
+        </div>
+        <div class="portfolio-content">
+          <div class="project-category">
+            <span class="category-icon marketing-icon"></span> Digital Marketing
+          </div>
+          <h3 class="project-title">RetailGiant Rebranding</h3>
+          <p class="project-subtitle">
+            Our rebranding effort for RetailGiant resulted in a fresh, vibrant identity that boosted their market presence, with a focus on consistency and customer loyalty.
+          </p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="marketing" data-project="beauty-influencer">
+        <div class="portfolio-image">
+          <img src="Images/beauty markting.jpg" alt="BeautyBrand Campaign" loading="lazy" />
+        </div>
+        <div class="portfolio-content">
+          <div class="project-category">
+            <span class="category-icon marketing-icon"></span> Digital Marketing
+          </div>
+          <h3 class="project-title">BeautyBrand Campaign</h3>
+          <p class="project-subtitle">
+            BeautyBrand’s digital marketing campaign focused on influencer partnerships to build a loyal customer base, showcasing their premium skincare line with personalized campaigns.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<br>
+
+    <!-- CTA Section -->
+    <section class="py-20 relative" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20office%20meeting%20room%20with%20glass%20walls%2C%20professional%20business%20environment%2C%20clean%20contemporary%20design%2C%20natural%20lighting%2C%20collaborative%20workspace%2C%20minimal%20furniture%2C%20corporate%20atmosphere&width=1920&height=600&seq=cta1&orientation=landscape'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-blue-900/80"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-white mb-4 flip-in">Ready to Start Your Project?</h2>
+            <p class="text-xl text-gray-200 mb-8 fade-up">
+                Let's discuss how we can help transform your ideas into reality with our expert team
+            </p>
+            <button class="bg-white text-primary px-8 py-3 !rounded-button hover:bg-gray-100 transition-colors whitespace-nowrap font-semibold hover-lift fade-up">
+                Get Free Consultation
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 fade-up animate" style="color: #0A1F44;">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-up animate">
+                    Ready to get started? Fill out the form below and our team will get back to you within 24 hours
+                </p>
+            </div>
+
+            <form id="contactForm" class="max-w-2xl mx-auto scale-in animate">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors">
+                        <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+                    <div>
+                        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors">
+                        <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors">
+                    <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Select Service *</label>
+                    <div class="relative">
+                        <button type="button" id="serviceDropdown" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors text-left bg-white flex items-center justify-between">
+                            <span id="selectedService" class="text-gray-500">Choose a service...</span>
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line text-gray-400"></i>
+                            </div>
+                        </button>
+                        <div id="serviceOptions" class="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg mt-1 hidden z-10">
+                            <div class="service-option px-4 py-3 hover:bg-gray-50 cursor-pointer" data-value="web-development">Web Development</div>
+                            <div class="service-option px-4 py-3 hover:bg-gray-50 cursor-pointer" data-value="app-development">App Development</div>
+                            <div class="service-option px-4 py-3 hover:bg-gray-50 cursor-pointer" data-value="ecommerce">Ecommerce</div>
+                            <div class="service-option px-4 py-3 hover:bg-gray-50 cursor-pointer" data-value="digital-marketing">Digital Marketing</div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="serviceValue" name="service" required>
+                    <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                </div>
+
+                <div class="mb-8">
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                    <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors resize-vertical"></textarea>
+                    <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="bg-primary text-white px-12 py-3 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap font-semibold">
+                        Submit Message
+                    </button>
+                </div>
+
+                <div id="successMessage" class="hidden bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mt-6 text-center">
+                    Thank you for your message! We'll get back to you within 24 hours.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-4">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="text-2xl font-['Pacifico'] mb-4">Zaarfa</div>
+                    <p class="text-gray-400 mb-4">
+                        We are a leading digital agency specializing in creating exceptional web experiences, mobile applications, and digital marketing solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                            <i class="ri-facebook-fill text-white"></i>
+                        </div>
+                        <div class="w-8 h-8 bg-blue-700 rounded-full flex items-center justify-center">
+                            <i class="ri-linkedin-fill text-white"></i>
+                        </div>
+                        <div class="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center">
+                            <i class="ri-instagram-fill text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                    <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a></li>
+                    <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#web-development" class="hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="#mobile-app-development" class="hover:text-white transition-colors">App Development</a></li>
+                        <li><a href="#ecommerce" class="hover:text-white transition-colors">Ecommerce</a></li>
+                        <li><a href="#digital-marketing" class="hover:text-white transition-colors">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-3 text-gray-400">
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span>+1 (307) 300-7115</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span>info@zaarfa.com</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span>Karachi City, Pakistan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 Zaarfa. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<script id="enhanced-animations">
+    document.addEventListener('DOMContentLoaded', () => {
+            // Variables
+            const header = document.querySelector('nav');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMenuBtn = document.getElementById('closeMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const heroContent = document.getElementById('heroContent');
+            const heroDescription = document.getElementById('heroDescription');
+            const heroButtons = document.getElementById('heroButtons');
+            
+            // Handle scroll events for header
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-white/90');
+                    header.classList.add('backdrop-blur-md');
+                    header.classList.add('shadow-md');
+
+                    
+                    // Change text color on scroll
+                    document.querySelectorAll('nav a, nav .text-white').forEach(el => {
+                        el.classList.remove('text-white');
+                        el.classList.add('text-gray-800');
+                    });
+                    
+                    // Change hamburger color
+                    document.querySelectorAll('#mobileMenuBtn span').forEach(span => {
+                        span.classList.remove('bg-white');
+                        span.classList.add('bg-gray-800');
+                    });
+                } else {
+                    header.classList.remove('bg-white/90');
+                    header.classList.remove('backdrop-blur-md');
+                    header.classList.remove('shadow-md');
+                    
+                    // Revert text color
+                    document.querySelectorAll('nav a, nav .text-gray-800').forEach(el => {
+                        el.classList.remove('text-gray-800');
+                        el.classList.add('text-white');
+                    });
+                    
+                    // Revert hamburger color
+                    document.querySelectorAll('#mobileMenuBtn span').forEach(span => {
+                        span.classList.remove('bg-gray-800');
+                        span.classList.add('bg-white');
+                    });
+                }
+            });
+            
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('mobile-menu-open');
+                mobileMenuBtn.classList.toggle('hamburger-active');
+                
+                // Animate menu items
+                setTimeout(() => {
+                    
+                    document.querySelectorAll('.mobile-menu-item').forEach(item => {
+                        item.classList.add('animate');
+                    });
+                }, 300);
+            });
+            
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('mobile-menu-open');
+                mobileMenuBtn.classList.remove('hamburger-active');
+                
+                // Reset animations
+                document.querySelectorAll('.mobile-menu-item').forEach(item => {
+                    item.classList.remove('animate');
+                });
+            });
+            
+            // Close mobile menu when clicking on menu items
+            document.querySelectorAll('.mobile-menu-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    mobileMenu.classList.remove('mobile-menu-open');
+                    mobileMenuBtn.classList.remove('hamburger-active');
+                    
+                    // Reset animations
+                    document.querySelectorAll('.mobile-menu-item').forEach(menuItem => {
+                        menuItem.classList.remove('animate');
+                    });
+                });
+            });
+            
+            // Hero animations
+            setTimeout(() => {
+                heroContent.classList.remove('opacity-0');
+                heroContent.classList.add('opacity-100');
+                
+                setTimeout(() => {
+                    heroDescription.classList.remove('opacity-0');
+                    heroDescription.classList.add('opacity-100');
+                    
+                    setTimeout(() => {
+                        heroButtons.classList.remove('opacity-0');
+                        heroButtons.classList.add('opacity-100');
+                    }, 300);
+                }, 300);
+            }, 500);
+            
+            // Intersection Observer for fade animations
+            const fadeElements = document.querySelectorAll('.fade-up, .slide-in-left, .slide-in-right, .scale-in, .rotate-in, .bounce-in, .flip-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        fadeObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+            
+            // Text reveal animations
+            document.querySelectorAll('.text-reveal').forEach(textElement => {
+                let text = textElement.textContent;
+                textElement.textContent = '';
+                
+                for (let i = 0; i < text.length; i++) {
+                    let span = document.createElement('span');
+                    span.textContent = text[i] === ' ' ? ' ' : text[i];
+                    span.style.transitionDelay = `${i * 0.03}s`;
+                    textElement.appendChild(span);
+                }
+                
+                const textObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate');
+                            textObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                });
+                
+                textObserver.observe(textElement);
+            });
+        });
+</script>
+
+<script id="services-animation">
+    document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cards = entry.target.querySelectorAll('.slide-in');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animate');
+                        }, index * 100);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        const servicesGrid = document.getElementById('services-grid');
+        if (servicesGrid) {
+            observer.observe(servicesGrid);
+        }
+    });
+</script>
+
+<script id="dropdown-functionality">
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdown = document.getElementById('serviceDropdown');
+        const options = document.getElementById('serviceOptions');
+        const selectedService = document.getElementById('selectedService');
+        const serviceValue = document.getElementById('serviceValue');
+        const serviceOptions = document.querySelectorAll('.service-option');
+
+        dropdown.addEventListener('click', function() {
+            options.classList.toggle('hidden');
+        });
+
+        serviceOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const value = this.getAttribute('data-value');
+                const text = this.textContent;
+                
+                selectedService.textContent = text;
+                selectedService.classList.remove('text-gray-500');
+                selectedService.classList.add('text-gray-900');
+                serviceValue.value = value;
+                options.classList.add('hidden');
+            });
+        });
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target) && !options.contains(e.target)) {
+                options.classList.add('hidden');
+            }
+        });
+    });
+</script>
+
+
+
+<script id="form-validation">
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        function showError(field, message) {
+            const errorDiv = field.parentNode.querySelector('.error-message');
+            errorDiv.textContent = message;
+            errorDiv.classList.remove('hidden');
+            field.classList.add('border-red-500');
+        }
+
+        function clearError(field) {
+            const errorDiv = field.parentNode.querySelector('.error-message');
+            errorDiv.classList.add('hidden');
+            field.classList.remove('border-red-500');
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            const formData = new FormData(form);
+            // Clear previous errors
+            const fields = form.querySelectorAll('input, textarea');
+            fields.forEach(field => clearError(field));
+
+            // Validate first name
+            const firstName = document.getElementById('firstName');
+            if (!firstName.value.trim()) {
+                showError(firstName, 'First name is required');
+                isValid = false;
+            }
+
+            // Validate last name
+            const lastName = document.getElementById('lastName');
+            if (!lastName.value.trim()) {
+                showError(lastName, 'Last name is required');
+                isValid = false;
+            }
+
+            // Validate email
+            const email = document.getElementById('email');
+            if (!email.value.trim()) {
+                showError(email, 'Email is required');
+                isValid = false;
+            } else if (!validateEmail(email.value)) {
+                showError(email, 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            // Validate service selection
+            const serviceValue = document.getElementById('serviceValue');
+            if (!serviceValue.value) {
+                const serviceDropdown = document.getElementById('serviceDropdown');
+                showError(serviceDropdown, 'Please select a service');
+                isValid = false;
+            }
+
+            // Validate message
+            const message = document.getElementById('message');
+            if (!message.value.trim()) {
+                showError(message, 'Message is required');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Collect the form data into an object with the correct column names
+                const formDataObject = {
+                    "Timestamp": new Date().toLocaleString(),
+                    "First Name": firstName.value,
+                    "Last Name": lastName.value,
+                    "Email": email.value,
+                    "Service": serviceValue.value,
+                    "Message": message.value
+                };
+
+                // Send form data to Google Sheets API
+                fetch('https://sheetdb.io/api/v1/x8v9l4n06ih14', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify([formDataObject]) // Send as an array of objects
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Data saved successfully:', data); // For debugging: check the response from the API
+                    // Show thank you popup
+                    alert('Thank you for your submission!');
+                    
+                    // Reset form
+                    form.reset();
+                    document.getElementById('selectedService').textContent = 'Choose a service...';
+                    document.getElementById('selectedService').classList.add('text-gray-500');
+                    document.getElementById('selectedService').classList.remove('text-gray-900');
+                })
+                .catch(error => {
+                    console.error('Error:', error); // Handle error
+                });
+            }
+        });
+    });
+
+    // Portfolio filter functionality with comprehensive scroll animations
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterBtns = document.querySelectorAll(
+          "#portfolio-filters .filter-btn"
+        );
+        const items = document.querySelectorAll(
+          "#portfolio-grid .portfolio-item"
+        );
+
+        // Add animation classes to portfolio items
+        items.forEach((item, index) => {
+          item.classList.add("portfolio-animate");
+        });
+
+        // Portfolio section scroll animation observer
+        const portfolioSectionObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Animate section header
+                const header = document.getElementById("portfolio-header");
+                if (header) {
+                  header.classList.add("animate");
+                }
+
+                // Animate filter tabs
+                const filterTabs = document.getElementById("portfolio-filters");
+                if (filterTabs) {
+                  setTimeout(() => {
+                    filterTabs.classList.add("animate");
+                  }, 300);
+                }
+
+                // Animate portfolio items with stagger
+                const portfolioItems = entry.target.querySelectorAll(".portfolio-animate");
+                portfolioItems.forEach((item, index) => {
+                  setTimeout(() => {
+                    item.classList.add("animate");
+                  }, 600 + (index * 100)); // Start after header and filter animations
+                });
+
+                portfolioSectionObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -150px 0px" }
+        );
+
+        // Observe portfolio section
+        const portfolioSection = document.getElementById("portfolio-section");
+        if (portfolioSection) {
+          portfolioSectionObserver.observe(portfolioSection);
+        }
+
+        // Mobile fallback - ensure animations trigger even if IntersectionObserver fails
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+          // On mobile, trigger animations after a short delay to ensure visibility
+          setTimeout(() => {
+            const header = document.getElementById("portfolio-header");
+            const filterTabs = document.getElementById("portfolio-filters");
+            const portfolioItems = document.querySelectorAll(".portfolio-animate");
+            
+            if (header) header.classList.add("animate");
+            if (filterTabs) filterTabs.classList.add("animate");
+            
+            portfolioItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add("animate");
+              }, index * 50); // Faster stagger on mobile
+            });
+          }, 500);
+        }
+
+        // Filter functionality with re-animation
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            // Remove active from all
+            filterBtns.forEach((b) => b.classList.remove("active"));
+            this.classList.add("active");
+            const filter = this.getAttribute("data-filter");
+            
+            // Reset animations for filtered items
+            items.forEach((item) => {
+              item.classList.remove("animate");
+              if (
+                filter === "all" ||
+                item.getAttribute("data-category") === filter
+              ) {
+                item.style.display = "";
+                // Re-trigger animation for visible items with stagger
+                const visibleItems = Array.from(items).filter(item => 
+                  filter === "all" || item.getAttribute("data-category") === filter
+                );
+                visibleItems.forEach((item, index) => {
+                  setTimeout(() => {
+                    item.classList.add("animate");
+                  }, index * 80);
+                });
+              } else {
+                item.style.display = "none";
+              }
+            });
+          });
+        });
+
+        // Add hover animations for portfolio items
+        items.forEach((item) => {
+          item.addEventListener("mouseenter", function() {
+            this.style.transform = "translateY(-12px) scale(1.02)";
+            this.style.boxShadow = "0 25px 50px rgba(0, 0, 0, 0.2)";
+          });
+
+          item.addEventListener("mouseleave", function() {
+            this.style.transform = "";
+            this.style.boxShadow = "";
+          });
+        });
+
+        // Handle window resize and orientation changes
+        window.addEventListener('resize', function() {
+          const newIsMobile = window.innerWidth <= 768;
+          if (newIsMobile && !isMobile) {
+            // Just switched to mobile, ensure animations are visible
+            const portfolioItems = document.querySelectorAll(".portfolio-animate");
+            portfolioItems.forEach((item) => {
+              if (!item.classList.contains("animate")) {
+                item.classList.add("animate");
+              }
+            });
+          }
+        });
+
+        // Sticky navbar on scroll
+        const navbar = document.getElementById('navbar');
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', function() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          if (scrollTop > 100) {
+            // Add background and shadow when scrolled
+            navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
+            navbar.classList.remove('bg-transparent');
+            
+            // Change text color to dark
+            const navLinks = navbar.querySelectorAll('a, div');
+            navLinks.forEach(link => {
+              link.classList.add('!text-gray-800');
+              link.classList.remove('text-white');
+            });
+          } else {
+            // Remove background when at top
+            navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
+            navbar.classList.add('bg-transparent');
+            
+            // Change text color back to white
+            const navLinks = navbar.querySelectorAll('a, div');
+            navLinks.forEach(link => {
+              link.classList.remove('!text-gray-800');
+              link.classList.add('text-white');
+            });
+          }
+          
+          lastScrollTop = scrollTop;
+        });
+      });
+</script>
+
+<!-- Chatbot Widget -->
+<div id="chatbot-container">
+    <!-- Chat Toggle Button -->
+    <div id="chat-toggle" class="chat-toggle">
+        <svg id="chat-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z" fill="white"/>
+            <path d="M7 9H17V11H7V9ZM7 12H15V14H7V12Z" fill="white"/>
+        </svg>
+        <svg id="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="white"/>
+        </svg>
+    </div>
+    
+    <!-- Chat Window -->
+    <div id="chat-window" class="chat-window">
+        <div class="chat-header">
+            <h3>Zaarfa Assistant</h3>
+            <p>How can I help you today?</p>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    Hello! I'm your Zaarfa assistant. How can I help you with our digital services today?
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Type your message..." maxlength="500">
+            <button id="send-button" class="send-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="white"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Chatbot Styles */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: 'Inter', sans-serif;
+}
+
+.chat-toggle {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.chat-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+}
+
+.chat-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chat-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.chat-header p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.bot-message {
+    align-self: flex-start;
+}
+
+.user-message {
+    align-self: flex-end;
+}
+
+.message-content {
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.bot-message .message-content {
+    background: #f1f3f4;
+    color: #0A1F44;
+}
+
+.user-message .message-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.chat-input-container {
+    padding: 20px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+#chat-input:focus {
+    border-color: #667eea;
+}
+
+.send-button {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.send-button:hover {
+    transform: scale(1.1);
+}
+
+.send-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 16px;
+    background: #f1f3f4;
+    border-radius: 18px;
+    max-width: 80px;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background: #9ca3af;
+    border-radius: 50%;
+    animation: typing 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .chat-window {
+        width: 300px;
+        height: 450px;
+    }
+    
+    #chatbot-container {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+</style>
+
+<script>
+// Chatbot Functionality
+class ZaarfaChatbot {
+    constructor() {
+        this.apiKey = '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';
+        this.apiUrl = 'https://openrouter.ai/api/v1/chat/completions';
+        this.corsProxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        this.isOpen = false;
+        this.isTyping = false;
+        
+        this.initializeElements();
+        this.bindEvents();
+        this.setupSystemPrompt();
+    }
+    
+    initializeElements() {
+        this.chatToggle = document.getElementById('chat-toggle');
+        this.chatWindow = document.getElementById('chat-window');
+        this.chatMessages = document.getElementById('chat-messages');
+        this.chatInput = document.getElementById('chat-input');
+        this.sendButton = document.getElementById('send-button');
+        this.chatIcon = document.getElementById('chat-icon');
+        this.closeIcon = document.getElementById('close-icon');
+    }
+    
+    bindEvents() {
+        this.chatToggle.addEventListener('click', () => this.toggleChat());
+        this.sendButton.addEventListener('click', () => this.sendMessage());
+        this.chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                this.sendMessage();
+            }
+        });
+    }
+    
+    setupSystemPrompt() {
+        this.systemPrompt = `You are a helpful assistant for Zaarfa, a digital solutions company. Zaarfa offers the following services:
+        
+        1. Web Development - Custom websites and web applications
+        2. Mobile App Development - iOS and Android applications
+        3. E-commerce Solutions - Online stores and marketplaces
+        4. Digital Marketing - SEO, social media, and online advertising
+        
+        You should be friendly, professional, and knowledgeable about Zaarfa's services. Help users understand how Zaarfa can solve their digital needs. Keep responses concise and helpful. If users ask about pricing or want to start a project, encourage them to fill out the contact form on the website.`;
+    }
+    
+    toggleChat() {
+        this.isOpen = !this.isOpen;
+        
+        if (this.isOpen) {
+            this.chatWindow.style.display = 'flex';
+            this.chatIcon.style.display = 'none';
+            this.closeIcon.style.display = 'block';
+            this.chatInput.focus();
+        } else {
+            this.chatWindow.style.display = 'none';
+            this.chatIcon.style.display = 'block';
+            this.closeIcon.style.display = 'none';
+        }
+    }
+    
+    async sendMessage() {
+        const message = this.chatInput.value.trim();
+        if (!message || this.isTyping) return;
+        
+        // Add user message
+        this.addMessage(message, 'user');
+        this.chatInput.value = '';
+        
+        // Show typing indicator
+        this.showTypingIndicator();
+        
+        try {
+            const response = await this.callOpenRouterAPI(message);
+            this.hideTypingIndicator();
+            this.addMessage(response, 'bot');
+        } catch (error) {
+            this.hideTypingIndicator();
+            // Fallback response is now handled in callOpenRouterAPI
+            this.addMessage('I\'m here to help! Please try asking your question again.', 'bot');
+            console.error('Chatbot error:', error);
+        }
+    }
+    
+    async callOpenRouterAPI(message) {
+        try {
+            console.log('Making API request to OpenRouter...');
+            
+            // Try direct API call first
+            let response;
+            try {
+                response = await fetch(this.apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${this.apiKey}`,
+                        'Content-Type': 'application/json',
+                        'HTTP-Referer': window.location.href,
+                        'X-Title': 'Zaarfa Chatbot'
+                    },
+                    body: JSON.stringify({
+                        model: 'meta-llama/llama-3.1-8b-instruct:free',
+                        messages: [
+                            {
+                                role: 'system',
+                                content: this.systemPrompt
+                            },
+                            {
+                                role: 'user',
+                                content: message
+                            }
+                        ],
+                        max_tokens: 300,
+                        temperature: 0.7
+                    })
+                });
+            } catch (corsError) {
+                console.log('Direct API failed, trying CORS proxy...');
+                // If CORS error, try with proxy
+                response = await fetch(this.corsProxyUrl + this.apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${this.apiKey}`,
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: JSON.stringify({
+                        model: 'meta-llama/llama-3.1-8b-instruct:free',
+                        messages: [
+                            {
+                                role: 'system',
+                                content: this.systemPrompt
+                            },
+                            {
+                                role: 'user',
+                                content: message
+                            }
+                        ],
+                        max_tokens: 300,
+                        temperature: 0.7
+                    })
+                });
+            }
+            
+            console.log('API Response status:', response.status);
+            
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error('API Error Response:', errorText);
+                
+                // If API fails, provide fallback responses
+                return this.getFallbackResponse(message);
+            }
+            
+            const data = await response.json();
+            console.log('API Response data:', data);
+            return data.choices[0].message.content;
+            
+        } catch (error) {
+            console.error('Detailed API Error:', error);
+            
+            // Provide fallback response
+            return this.getFallbackResponse(message);
+        }
+    }
+    
+
+    getFallbackResponse(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        if (lowerMessage.includes('service') || lowerMessage.includes('what') && lowerMessage.includes('do')) {
+            return "Zaarfa offers comprehensive digital solutions including:\n\n• Web Development - Custom websites and web applications\n• Mobile App Development - iOS and Android apps\n• E-commerce Solutions - Online stores and marketplaces\n• Digital Marketing - SEO, social media, and online advertising\n\nWould you like to know more about any specific service?";
+        }
+        
+        if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('quote')) {
+            return "Our pricing varies based on project requirements and complexity. For a detailed quote tailored to your needs, please fill out our contact form below with your project details, and our team will get back to you with a comprehensive proposal.";
+        }
+        
+        if (lowerMessage.includes('email')) {
+            return "You can reach us at our email: info@zaarfa.com. We'll respond promptly to discuss your digital solution needs!";
+        }
+        
+        if (lowerMessage.includes('phone') || lowerMessage.includes('whatsapp') || lowerMessage.includes('call') || lowerMessage.includes('number')) {
+            return "You can call us at: +1 (555) 123-4567. We're available to discuss your project requirements and provide personalized solutions.";
+        }
+        
+        if (lowerMessage.includes('contact') || lowerMessage.includes('reach')) {
+            return "You can reach us through multiple ways:\n\n📧 Email: info@zaarfa.com\n📞 Phone: +1 (555) 123-4567\n\nOr simply fill out the contact form on this page, and our team will respond promptly to discuss your digital solution needs.";
+        }
+        
+        if (lowerMessage.includes('web') || lowerMessage.includes('website')) {
+            return "Our web development services include custom website design, responsive development, e-commerce platforms, and web applications. We use modern technologies to create fast, secure, and user-friendly websites that help your business grow online.";
+        }
+        
+        if (lowerMessage.includes('app') || lowerMessage.includes('mobile')) {
+            return "We develop native and cross-platform mobile applications for iOS and Android. Our mobile solutions are designed to provide excellent user experiences while meeting your business objectives and technical requirements.";
+        }
+        
+        if (lowerMessage.includes('marketing') || lowerMessage.includes('seo')) {
+            return "Our digital marketing services help increase your online visibility and drive growth. We offer SEO optimization, social media marketing, content strategy, and online advertising campaigns to reach your target audience effectively.";
+        }
+        
+        // Default response
+        return "Thank you for your interest in Zaarfa! We're a digital solutions company specializing in web development, mobile apps, e-commerce, and digital marketing. How can we help you achieve your digital goals today? Feel free to use the contact form below for detailed inquiries.";
+    }
+    
+    addMessage(content, type) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}-message`;
+        
+        const messageContent = document.createElement('div');
+        messageContent.className = 'message-content';
+        messageContent.textContent = content;
+        
+        messageDiv.appendChild(messageContent);
+        this.chatMessages.appendChild(messageDiv);
+        
+        // Scroll to bottom
+        this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+    }
+    
+    showTypingIndicator() {
+        this.isTyping = true;
+        this.sendButton.disabled = true;
+        
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message bot-message';
+        typingDiv.id = 'typing-indicator';
+        
+        const typingContent = document.createElement('div');
+        typingContent.className = 'typing-indicator';
+        typingContent.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+        
+        typingDiv.appendChild(typingContent);
+        this.chatMessages.appendChild(typingDiv);
+        
+        this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+    }
+    
+    hideTypingIndicator() {
+        this.isTyping = false;
+        this.sendButton.disabled = false;
+        
+        const typingIndicator = document.getElementById('typing-indicator');
+        if (typingIndicator) {
+            typingIndicator.remove();
+        }
+    }
+}
+
+// Initialize chatbot when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new ZaarfaChatbot();
+    
+    // Add logo click functionality to scroll to top (home)
+    const logoLinks = document.querySelectorAll('a[href="#"]');
+    logoLinks.forEach(link => {
+        if (link.textContent.trim() === 'Zaarfa') {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
